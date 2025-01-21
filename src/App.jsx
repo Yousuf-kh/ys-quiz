@@ -2,7 +2,7 @@ import { Box, Button } from '@chakra-ui/react'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Welcome from './components/Welcome'
-import Category from './components/category'
+import Category from './components/Category'
 
 const App = () => {
   return (
