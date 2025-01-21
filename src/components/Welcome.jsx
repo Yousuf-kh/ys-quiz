@@ -29,8 +29,8 @@ const Welcome = () => {
                     <Input onChange={(e) => { setUserName(e.target.value) }} bg={'white'} placeholder={'Введите Имя'} />
                     {
                         userName.length > 3 && (
-                            <Link className='link' to={'/category'}>
-                                <Button w={'full'}  _hover={{ bg: 'green.700'}} color={'#fff'} bg={'green.500'}>Дальше</Button>
+                            <Link w={{md:'',base:'full'}} to={'/category'}>
+                                <Button w={{md:'',base:'full'}}  _hover={{ bg: 'green.700'}} color={'#fff'} bg={'green.500'}>Дальше</Button>
                             </Link>
                         )
                     }
