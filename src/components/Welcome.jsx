@@ -11,7 +11,7 @@ const Welcome = () => {
 
 
     document.addEventListener('keyup', (e) => {
-        if (e.code == "Enter" && userName.length > 4) {
+        if (e.code == "Enter" && userName.length > 3) {
             navigate('/category')
         }
     })
@@ -28,7 +28,7 @@ const Welcome = () => {
                 <Flex justify={{base:'center'}} flexDir={{md:'row',base:'column'}} h={'70dvh'} align={'center'} gap={{md:5,base:2}}>
                     <Input onChange={(e) => { setUserName(e.target.value) }} bg={'white'} placeholder={'Введите Имя'} />
                     {
-                        userName.length > 4 && (
+                        userName.length > 3 && (
                             <Link className='link' to={'/category'}>
                                 <Button w={'full'}  _hover={{ bg: 'green.700'}} color={'#fff'} bg={'green.500'}>Дальше</Button>
                             </Link>
