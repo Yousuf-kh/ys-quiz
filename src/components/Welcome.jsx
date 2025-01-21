@@ -21,16 +21,16 @@ const Welcome = () => {
 
     return (
         <Box bg={'blue.800'} minH={'100dvh'}>
-            <Container maxW={'container.md'} p={5}>
+            <Container maxW={'container.md'}>
                 <Heading color={'#fff'} textAlign={'center'}>Опросник по Веб-программированию</Heading>
                 <Text textAlign={'center'} fontWeight={'500'} color={'red.500'}>Чтобы продолжить <Box as={'span'} textDecor={'underline'}>обязательно</Box> введите имя <Box as={'span'} fontSize={'2xl'}>!</Box></Text>
 
-                <Flex h={'70dvh'} align={'center'} gap={5}>
+                <Flex justify={{base:'center'}} flexDir={{md:'row',base:'column'}} h={'70dvh'} align={'center'} gap={{md:5,base:2}}>
                     <Input onChange={(e) => { setUserName(e.target.value) }} bg={'white'} placeholder={'Введите Имя'} />
                     {
                         userName.length > 4 && (
-                            <Link to={'/category'}>
-                                <Button _hover={{ bg: 'green.700' }} display={'flex'} justifyContent={'center'} alignItems={'center'} color={'#fff'} bg={'green.500'}>Дальше</Button>
+                            <Link className='link' to={'/category'}>
+                                <Button w={'full'}  _hover={{ bg: 'green.700'}} color={'#fff'} bg={'green.500'}>Дальше</Button>
                             </Link>
                         )
                     }
