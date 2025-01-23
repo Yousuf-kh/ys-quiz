@@ -4,7 +4,7 @@ import { useAppContext } from '../context';
 import { Link } from 'react-router-dom';
 
 const Category = () => {
-  const { userName, hyper, setHyper } = useAppContext(); // Одна деструктуризация
+  const { userName, hyper, setHyper } = useAppContext(); // Деструктурируем данные из контекста
 
   const handleSetHyper = (value) => {
     setHyper(value); // Устанавливаем значение hyper
@@ -14,7 +14,7 @@ const Category = () => {
     <Box align={'center'} bg={'blue.800'} minH={'100dvh'}>
       <Container maxW={'container.md'}>
         <Heading textAlign={'center'} color={'#fff'} p={5}>
-          Выберайте тему{' '}
+          Выберите тему{' '}
           <Box color={'red.500'} as="span">
             {userName ? userName : 'User'}
           </Box>
@@ -28,7 +28,7 @@ const Category = () => {
           mx={'auto'}
         >
           {/* HTML & CSS */}
-          <Link to={'/quiz'}>
+          <Box onClick={() => { handleSetHyper(true); }} as={Link} to={'/quiz'}>
             <Flex
               bg={'green.500'}
               px={5}
@@ -40,14 +40,12 @@ const Category = () => {
               gap={6}
             >
               <Image w={{ md: '120px', base: '80px' }} src={'/icon1.png'} />
-              <Box onClick={() => handleSetHyper(true)}> {/* Функция для установки hyper */}
-                <Heading fontSize={{ md: '40px', base: '25px' }}>HTML & CSS</Heading>
-              </Box>
+              <Heading fontSize={{ md: '40px', base: '25px' }}>HTML & CSS</Heading>
             </Flex>
-          </Link>
+          </Box>
 
           {/* JavaScript */}
-          <Link to={'/quiz'}>
+          <Box onClick={() => { handleSetHyper(false); }} as={Link} to={'/quiz'}>
             <Flex
               px={5}
               py={3}
@@ -59,11 +57,9 @@ const Category = () => {
               gap={6}
             >
               <Image w={{ md: '100px', base: '70px' }} src={'/js.webp'} />
-              <Box onClick={() => handleSetHyper(false)}> {/* Функция для установки hyper */}
-                <Heading fontSize={{ md: '40px', base: '25px' }}>JavaScript</Heading>
-              </Box>
+              <Heading fontSize={{ md: '40px', base: '25px' }}>JavaScript</Heading>
             </Flex>
-          </Link>
+          </Box>
         </Flex>
       </Container>
     </Box>
