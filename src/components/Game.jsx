@@ -6,9 +6,9 @@ import { useAppContext } from '../context';
 
 const Game = () => {
     const [step, setStep] = useState(0);
-    const [selectedIndex, setSelectedIndex] = useState(null);
+    // const [selectedIndex, setSelectedIndex] = useState(null);
     const navigate = useNavigate();
-    const { hyper } = useAppContext();
+    const { hyper, correct, setCorrect } = useAppContext();
 
     const questions = hyper ? htmlCssQuestions : javascriptQuestions; // Выбор массива вопросов
     const question = questions[step]; // Текущий вопрос
@@ -19,25 +19,30 @@ const Game = () => {
         }
     }, [step, navigate, questions.length]);
 
-    const onClickVariant = (i) => {
-        setSelectedIndex(i);
-    };
-
-    const onClickNext = () => {
-        if (selectedIndex !== null) {
-            setStep(step + 1);
-            setSelectedIndex(null);
-        } else {
-            alert('Пожалуйста, выберите вариант перед продолжением!');
+    const onClickVariant = (c, i) => {
+        // setSelectedIndex(i);
+        console.log(i, step);
+        setStep(step + 1);
+        if (c == question.answer) {
+            setCorrect(correct + 1)
         }
     };
 
-    const onClickPrev = () => {
-        if (step > 0) {
-            setStep(step - 1);
-            setSelectedIndex(null);
-        }
-    };
+    // const onClickNext = () => {
+    //     if (selectedIndex !== null) {
+
+    //         setSelectedIndex(null);
+    //     } else {
+    //         alert('Пожалуйста, выберите вариант перед продолжением!');
+    //     }
+    // };
+
+    // const onClickPrev = () => {
+    //     if (step > 0) {
+    //         setStep(step - 1);
+    //         setSelectedIndex(null);
+    //     }
+    // };
 
     const percent = Math.round((step / questions.length) * 100); // Процент выполнения
 
@@ -45,6 +50,9 @@ const Game = () => {
     if (step >= questions.length) {
         return null; // Ничего не рендерим, так как сразу сработает useEffect
     }
+
+
+
 
     return (
         <Box
@@ -72,7 +80,7 @@ const Game = () => {
 
                         {question.options.map((c, i) => (
                             <Text
-                                onClick={() => onClickVariant(i)}
+                                onClick={() => onClickVariant(c, i)}
                                 _focus={{ fontWeight: '900' }}
                                 cursor={'pointer'}
                                 key={c}
@@ -80,20 +88,20 @@ const Game = () => {
                                 p={3}
                                 border={'1px solid #999'}
                                 borderRadius={'10px'}
-                                bg={i === selectedIndex ? 'green.100' : 'white'}
+                            // bg={i === selectedIndex ? 'green.100' : 'white'}
                             >
                                 {c}
                             </Text>
                         ))}
 
-                        <Flex justify={'space-between'} align={'center'}>
+                        {/* <Flex justify={'space-between'} align={'center'}>
                             <Button onClick={onClickPrev} colorScheme="red" isDisabled={step === 0}>
                                 Prev
                             </Button>
                             <Button onClick={onClickNext} colorScheme="green">
                                 Next
                             </Button>
-                        </Flex>
+                        </Flex> */}
                     </Box>
                 </Flex>
             </Container>

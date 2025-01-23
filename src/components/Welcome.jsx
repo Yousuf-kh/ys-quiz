@@ -8,7 +8,7 @@ const Welcome = () => {
     const { userName, setUserName } = useAppContext()
 
     let navigate = useNavigate();
-
+    localStorage.setItem('userName', userName)
 
     document.addEventListener('keyup', (e) => {
         if (e.code == "Enter" && userName.length > 3) {
@@ -25,12 +25,12 @@ const Welcome = () => {
                 <Heading color={'#fff'} textAlign={'center'}>Опросник по Веб-программированию</Heading>
                 <Text textAlign={'center'} fontWeight={'500'} color={'red.500'}>Чтобы продолжить <Box as={'span'} textDecor={'underline'}>обязательно</Box> введите имя <Box as={'span'} fontSize={'2xl'}>!</Box></Text>
 
-                <Flex justify={{base:'center'}} flexDir={{md:'row',base:'column'}} h={'70dvh'} align={'center'} gap={{md:5,base:2}}>
+                <Flex justify={{ base: 'center' }} flexDir={{ md: 'row', base: 'column' }} h={'70dvh'} align={'center'} gap={{ md: 5, base: 2 }}>
                     <Input onChange={(e) => { setUserName(e.target.value) }} bg={'white'} placeholder={'Введите Имя'} />
                     {
                         userName.length > 3 && (
-                            <Link w={{md:'',base:'full'}} to={'/category'}>
-                                <Button w={{md:'',base:'full'}}  _hover={{ bg: 'green.700'}} color={'#fff'} bg={'green.500'}>Дальше</Button>
+                            <Link w={{ md: '', base: 'full' }} to={'/category'}>
+                                <Button w={{ md: '', base: 'full' }} _hover={{ bg: 'green.700' }} color={'#fff'} bg={'green.500'}>Дальше</Button>
                             </Link>
                         )
                     }

@@ -1,17 +1,24 @@
 import { Box, Container, Flex, Heading, Image } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppContext } from '../context';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Category = () => {
-  const { userName, hyper, setHyper } = useAppContext(); // Деструктурируем данные из контекста
-
+  const { hyper, setHyper } = useAppContext();
+  const [userName, setUserName] = useState(localStorage.getItem('userName') || "");
   const handleSetHyper = (value) => {
-    setHyper(value); // Устанавливаем значение hyper
+    setHyper(value);
   };
 
   let navigate = useNavigate();
 
+  useEffect(() => {
+    if (userName.length === 0) {
+      navigate('/category');
+    }
+  }, [userName, navigate]);
+
+  
 
   return (
     <Box align={'center'} bg={'blue.800'} minH={'100dvh'}>
@@ -19,7 +26,7 @@ const Category = () => {
         <Heading textAlign={'center'} color={'#fff'} p={5}>
           Выберите тему{' '}
           <Box color={'red.500'} as="span">
-            {userName ? userName : navigate('/category')}
+            {userName}
           </Box>
         </Heading>
         <Flex
