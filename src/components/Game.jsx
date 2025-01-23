@@ -48,7 +48,7 @@ const Game = () => {
 
     return (
         <Box
-            bg={'url(https://assets-v2.lottiefiles.com/a/569d9eae-116d-11ee-ade3-df3bcdfa8a46/s4HLgrM1nM.gif)'}
+            bg={'blue.800'}
             bgSize={'cover'}
             bgRepeat={'no-repeat'}
             h={'100dvh'}
