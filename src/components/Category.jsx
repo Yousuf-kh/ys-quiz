@@ -1,7 +1,7 @@
 import { Box, Container, Flex, Heading, Image } from '@chakra-ui/react';
 import React from 'react';
 import { useAppContext } from '../context';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Category = () => {
   const { userName, hyper, setHyper } = useAppContext(); // Деструктурируем данные из контекста
@@ -10,13 +10,16 @@ const Category = () => {
     setHyper(value); // Устанавливаем значение hyper
   };
 
+  let navigate = useNavigate();
+
+
   return (
     <Box align={'center'} bg={'blue.800'} minH={'100dvh'}>
       <Container maxW={'container.md'}>
         <Heading textAlign={'center'} color={'#fff'} p={5}>
           Выберите тему{' '}
           <Box color={'red.500'} as="span">
-            {userName ? userName : 'User'}
+            {userName ? userName : navigate('/category')}
           </Box>
         </Heading>
         <Flex
