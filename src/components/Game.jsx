@@ -1,18 +1,23 @@
 import { Box, Button, Container, Flex, Heading, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { htmlCssQuestions } from '../helpers/const';
+import { htmlCssQuestions, javascriptQuestions } from '../helpers/const';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context';
 
 const Game = () => {
     const [step, setStep] = useState(0);
     const [selectedIndex, setSelectedIndex] = useState(null);
     const navigate = useNavigate();
+    const { hyper } = useAppContext();
+
+    const questions = hyper ? htmlCssQuestions : javascriptQuestions; // Выбор массива вопросов
+    const question = questions[step]; // Текущий вопрос
 
     useEffect(() => {
-        if (step === htmlCssQuestions.length) {
-            navigate('/result');
+        if (step === questions.length) {
+            navigate('/result'); // Переход на страницу результатов
         }
-    }, [step, navigate]);
+    }, [step, navigate, questions.length]);
 
     const onClickVariant = (i) => {
         setSelectedIndex(i);
@@ -34,14 +39,12 @@ const Game = () => {
         }
     };
 
-    const percent = Math.round((step / htmlCssQuestions.length) * 100);
+    const percent = Math.round((step / questions.length) * 100); // Процент выполнения
 
     // Проверка: если step больше или равен длине массива, не рендерим вопрос
-    if (step >= htmlCssQuestions.length) {
+    if (step >= questions.length) {
         return null; // Ничего не рендерим, так как сразу сработает useEffect
     }
-
-    const question = htmlCssQuestions[step]; // Получаем текущий вопрос
 
     return (
         <Box
