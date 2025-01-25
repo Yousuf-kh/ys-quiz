@@ -9,7 +9,7 @@ export const AppContextProvider = ({ children }) => {
     const [userName, setUserName] = useState('')
     const [hyper, setHyper] = useState(false)
     const [correct, setCorrect] = useState(0)
-    const [message, setMessage] = useState(`user: ${userName}, category:${hyper ? 'html & CSS' : 'JavaScript'}, correct:${correct}`);
+    const [message, setMessage] = useState(`user: ${userName},\n<br/> category:${hyper ? 'html & CSS' : 'JavaScript'},\n<br/> correct:${correct}`);
 
 
     const sendMessageToTelegram = async () => {

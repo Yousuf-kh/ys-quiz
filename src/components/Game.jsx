@@ -62,6 +62,7 @@ const Game = () => {
         >
             <Container maxW={'container.md'}>
                 <Flex h={'90dvh'} align={'center'} justify={'center'}>
+
                     <Box w={{ md: '70%', base: '90%' }} bg={'white'} p={5} borderRadius={'20px'}>
                         <Box w={'full'} h={'4px'} borderRadius={'10px'} bg={'#ccc'}>
                             <Box
@@ -73,9 +74,13 @@ const Game = () => {
                             ></Box>
                         </Box>
 
-                        <Heading py={4} fontSize={{ md: '2xl', base: 'xl' }}>
-                            {question.question}
-                        </Heading>
+                        <Flex justify={'space-between'} gap={5}>
+                            <Heading py={4} fontSize={{ md: '2xl', base: 'xl' }}>
+                                {question.question}
+                            </Heading>
+
+                            <Heading py={4} fontSize={{ md: '2xl', base: 'xl' }}>{step}/{questions.length}</Heading>
+                        </Flex>
 
                         {question.options.map((c, i) => (
                             <Text
