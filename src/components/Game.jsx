@@ -21,7 +21,6 @@ const Game = () => {
 
     const onClickVariant = (c, i) => {
         // setSelectedIndex(i);
-        console.log(i, step);
         setStep(step + 1);
         if (c == question.answer) {
             setCorrect(correct + 1)

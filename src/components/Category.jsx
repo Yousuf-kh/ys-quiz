@@ -4,7 +4,7 @@ import { useAppContext } from '../context';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Category = () => {
-  const { hyper, setHyper } = useAppContext();
+  const { hyper, setHyper,setCorrect } = useAppContext();
   const [userName, setUserName] = useState(localStorage.getItem('userName') || "");
   const handleSetHyper = (value) => {
     setHyper(value);
@@ -16,6 +16,7 @@ const Category = () => {
     if (userName.length === 0) {
       navigate('/category');
     }
+    setCorrect(0)
   }, [userName, navigate]);
 
   

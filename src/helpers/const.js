@@ -14,16 +14,16 @@ export const htmlCssQuestions = [
     { question: "Какой атрибут используется для задания уникального идентификатора элемента?", options: ["id", "class", "name", "key"], answer: "id" },
     { question: "Какой тег используется для вставки JavaScript?", options: ["<script>", "<js>", "<javascript>", "<code>"], answer: "<script>" },
     { question: "Какое свойство используется для задания фона элемента?", options: ["background-color", "color", "font-color", "background"], answer: "background-color" },
-    // { question: "Какой тег используется для создания абзаца?", options: ["<p>", "<text>", "<paragraph>", "<content>"], answer: "<p>" },
-    // { question: "Какой тег используется для создания выпадающего списка?", options: ["<select>", "<dropdown>", "<option>", "<list>"], answer: "<select>" },
-    // { question: "Какой псевдокласс применяется к элементу при наведении мыши?", options: [":hover", ":focus", ":active", ":link"], answer: ":hover" },
-    // { question: "Как добавить комментарий в HTML?", options: ["<!-- Комментарий -->", "// Комментарий", "/* Комментарий */", "Комментарий"], answer: "<!-- Комментарий -->" },
-    // { question: "Как добавить комментарий в CSS?", options: ["/* Комментарий */", "// Комментарий", "<!-- Комментарий -->", "Комментарий"], answer: "/* Комментарий */" },
-    // { question: "Какое значение используется для скрытия элемента в CSS?", options: ["display: none", "visibility: hidden", "opacity: 0", "Все вышеперечисленное"], answer: "Все вышеперечисленное" },
-    // { question: "Что делает тег <title>?", options: ["Определяет заголовок страницы в браузере", "Создает заголовок на странице", "Определяет метаинформацию", "Добавляет ссылку"], answer: "Определяет заголовок страницы в браузере" },
-    // { question: "Какое свойство в CSS задает размер шрифта?", options: ["font-size", "text-size", "size", "font-style"], answer: "font-size" },
-    // { question: "Какой атрибут используется для открытия ссылки в новой вкладке?", options: ["target='_blank'", "new='_tab'", "href='_blank'", "open='new'"], answer: "target='_blank'" },
-    // { question: "Какой селектор используется для выбора элемента с определенным классом?", options: [".classname", "#classname", "classname", "*classname"], answer: ".classname" }
+    { question: "Какой тег используется для создания абзаца?", options: ["<p>", "<text>", "<paragraph>", "<content>"], answer: "<p>" },
+    { question: "Какой тег используется для создания выпадающего списка?", options: ["<select>", "<dropdown>", "<option>", "<list>"], answer: "<select>" },
+    { question: "Какой псевдокласс применяется к элементу при наведении мыши?", options: [":hover", ":focus", ":active", ":link"], answer: ":hover" },
+    { question: "Как добавить комментарий в HTML?", options: ["<!-- Комментарий -->", "// Комментарий", "/* Комментарий */", "Комментарий"], answer: "<!-- Комментарий -->" },
+    { question: "Как добавить комментарий в CSS?", options: ["/* Комментарий */", "// Комментарий", "<!-- Комментарий -->", "Комментарий"], answer: "/* Комментарий */" },
+    { question: "Какое значение используется для скрытия элемента в CSS?", options: ["display: none", "visibility: hidden", "opacity: 0", "Все вышеперечисленное"], answer: "Все вышеперечисленное" },
+    { question: "Что делает тег <title>?", options: ["Определяет заголовок страницы в браузере", "Создает заголовок на странице", "Определяет метаинформацию", "Добавляет ссылку"], answer: "Определяет заголовок страницы в браузере" },
+    { question: "Какое свойство в CSS задает размер шрифта?", options: ["font-size", "text-size", "size", "font-style"], answer: "font-size" },
+    { question: "Какой атрибут используется для открытия ссылки в новой вкладке?", options: ["target='_blank'", "new='_tab'", "href='_blank'", "open='new'"], answer: "target='_blank'" },
+    { question: "Какой селектор используется для выбора элемента с определенным классом?", options: [".classname", "#classname", "classname", "*classname"], answer: ".classname" }
 ];
 
 
@@ -43,15 +43,15 @@ export const javascriptQuestions = [
     { question: "Что делает метод 'map()'?", options: ["Создает новый массив", "Изменяет исходный массив", "Удаляет элементы массива", "Клонирует массив"], answer: "Создает новый массив" },
     { question: "Какой объект используется для работы с датой?", options: ["Date", "Time", "Calendar", "Clock"], answer: "Date" },
     { question: "Какой оператор используется для объединения строк?", options: ["+", "-", "*", "&"], answer: "+" },
-    // { question: "Что делает метод 'setTimeout()'?", options: ["Выполняет функцию с задержкой", "Запускает цикл", "Останавливает выполнение скрипта", "Удаляет элемент"], answer: "Выполняет функцию с задержкой" },
-    // { question: "Какой метод используется для преобразования массива в строку?", options: ["join()", "toString()", "concat()", "split()"], answer: "join()" },
-    // { question: "Какой цикл используется для итерации по объектам?", options: ["for...in", "for", "forEach", "while"], answer: "for...in" },
-    // { question: "Как проверить, является ли переменная массивом?", options: ["Array.isArray()", "isArray()", "typeof array", "instanceof Array"], answer: "Array.isArray()" },
-    // { question: "Как остановить выполнение цикла?", options: ["break", "continue", "return", "stop"], answer: "break" },
-    // { question: "Что делает метод 'filter()'?", options: ["Создает новый массив с элементами, прошедшими условие", "Изменяет исходный массив", "Удаляет элементы из массива", "Добавляет элементы в массив"], answer: "Создает новый массив с элементами, прошедшими условие" },
-    // { question: "Что вернет 'console.log(2 + '2')'?", options: ["'22'", "4", "'4'", "Ошибка"], answer: "'22'" },
-    // { question: "Как вызвать функцию каждые N миллисекунд?", options: ["setInterval()", "setTimeout()", "requestAnimationFrame()", "runEvery()"], answer: "setInterval()" },
-    // { question: "Что делает 'JSON.stringify()'?", options: ["Преобразует объект в строку JSON", "Парсит строку JSON", "Клонирует объект", "Удаляет свойства объекта"], answer: "Преобразует объект в строку JSON" },
-    // { question: "Что такое 'this' в JavaScript?", options: ["Контекст выполнения функции", "Глобальный объект", "Ссылка на родителя", "Ссылка на DOM"], answer: "Контекст выполнения функции" }
+    { question: "Что делает метод 'setTimeout()'?", options: ["Выполняет функцию с задержкой", "Запускает цикл", "Останавливает выполнение скрипта", "Удаляет элемент"], answer: "Выполняет функцию с задержкой" },
+    { question: "Какой метод используется для преобразования массива в строку?", options: ["join()", "toString()", "concat()", "split()"], answer: "join()" },
+    { question: "Какой цикл используется для итерации по объектам?", options: ["for...in", "for", "forEach", "while"], answer: "for...in" },
+    { question: "Как проверить, является ли переменная массивом?", options: ["Array.isArray()", "isArray()", "typeof array", "instanceof Array"], answer: "Array.isArray()" },
+    { question: "Как остановить выполнение цикла?", options: ["break", "continue", "return", "stop"], answer: "break" },
+    { question: "Что делает метод 'filter()'?", options: ["Создает новый массив с элементами, прошедшими условие", "Изменяет исходный массив", "Удаляет элементы из массива", "Добавляет элементы в массив"], answer: "Создает новый массив с элементами, прошедшими условие" },
+    { question: "Что вернет 'console.log(2 + '2')'?", options: ["'22'", "4", "'4'", "Ошибка"], answer: "'22'" },
+    { question: "Как вызвать функцию каждые N миллисекунд?", options: ["setInterval()", "setTimeout()", "requestAnimationFrame()", "runEvery()"], answer: "setInterval()" },
+    { question: "Что делает 'JSON.stringify()'?", options: ["Преобразует объект в строку JSON", "Парсит строку JSON", "Клонирует объект", "Удаляет свойства объекта"], answer: "Преобразует объект в строку JSON" },
+    { question: "Что такое 'this' в JavaScript?", options: ["Контекст выполнения функции", "Глобальный объект", "Ссылка на родителя", "Ссылка на DOM"], answer: "Контекст выполнения функции" }
 ];
 
